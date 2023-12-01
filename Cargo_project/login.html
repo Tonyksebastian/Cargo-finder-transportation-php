@@ -1,0 +1,124 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="logof.png">
+    <link rel="stylesheet" href="login.css">
+</head>
+    <!-- <?php
+    $mysqli= new mysqli("localhost","root","","myproject");
+    if($mysqli===false)
+    {
+        echo 'Connection error '.mysqli->connection_error;
+    }
+    else
+    {
+        echo  'Connection sucessfull....'.mysqli->server_error_info;
+    }
+    ?> -->
+<script>
+    var email = document.getElementById("gmail").value;
+    var pwd = document.getElementById("pass").value;
+
+    var pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+    var letters = /^[A-Za-z]+$/;
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    var number = /^[0-9]^/;
+    var alp = /^[A-Z]+[a-z]^/;
+
+    function valemail() {
+        var email = document.getElementById("gmail").value;
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!filter.test(email)) {
+            document.getElementById("val1").innerHTML = 'Please enter valid gmail';
+        }
+        else {
+            document.getElementById("val1").innerHTML = '';
+        }
+    }
+    function valpass() {
+        var pwd = document.getElementById("pass").value;
+        var pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+        if (!pwd_expression.test(pwd)) {
+
+            document.getElementById("val2").innerHTML = 'Upper case, Lower case, Special character and Numeric letter are required in Password filed';
+        }
+        else if (pwd == '') {
+            document.getElementById("val2").innerHTML = '';
+        }
+    }
+
+
+
+</script>
+
+<body>
+    <div class="page-1">
+
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="logof.png" alt="" height="70px" width="170px">
+            </div>
+            <div class="menu">
+
+                <a href="home.html">Home</a>
+                <a href="costcalculator.html">Cost Calculator</a>
+
+                <div class="searchbar">
+
+                    <input type="search" name="" id="" placeholder="Search...">
+                    <i class="fa-solid fa-magnifying-glass" id="icons"></i>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="log">
+            <div class="pic">
+
+                <img src="who.gif" alt="" srcset="">
+            </div>
+
+
+            <div class="box">
+                <form>
+                    <div class="logo">
+                        <img src="logof.png" alt="" height="70px" width="170px">
+                    </div>
+                    <br><br>
+                    <span id="val1"></span><br>
+                    <label for="">Enter your E-mail Id</label><br>
+                    <input type="email" value="" placeholder="" id="gmail" onkeydown="valemail()"> <br>
+                    <span id="val2"></span><br>
+                    <label for="">Enter your Password</label><br>
+                    <input type="password" value="" placeholder="" id="pass" onkeydown="valpass()"><br>
+                    <label for="">Keep me signed in </label>
+                    <div class="subm">
+                        <a href="home.html">
+                            <input type="submit" placeholder="Check">
+                        </a>
+                    </div>
+                    <hr><br>
+                    <span>Don't have an account <a href="register.html">
+                            <font style="color: brown;">Sign up here</font>
+                        </a></span>
+
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <br>
+    </div>
+</body>
+
+</html>

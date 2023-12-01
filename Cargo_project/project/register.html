@@ -1,0 +1,122 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="icon" href="logof.png">
+    <link rel="stylesheet" href="register.css">
+    <script>
+        function registration() {
+
+            var email = document.getElementById("gmail").value;
+            var pwd = document.getElementById("pass").value;
+            var state = document.getElementById("stat").value;
+            var phone = document.getElementById("phn").value;
+
+            //email id expression code
+            var number = /^[0-9]^/;
+            var alp = /^[A-Z]+[a-z]^/;
+            var pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+            var letters = /^[A-Za-z]+$/;
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+            if (email == '') {
+                alert('Please enter your gmail');
+            }
+            else if (!filter.test(email)) {
+                alert('Invalid mail');
+            }
+            else if (pwd == '') {
+                alert('Please enter your password');
+            }
+            else if (!pwd_expression.test(pwd)) {
+                alert('Upper case, Lower case, Special character and Numeric letter are required in Password filed');
+            }
+            else if (state == '') {
+                alert('Please enter your state');
+            }
+            else if (!alp.test(state)) {
+                alert('Enter valid state');
+            }
+            else if (phone == '') {
+                alert('Please enter your phone number');
+            }
+            else if (!number.test(phone)) {
+                alert('nEnter valid phone number');
+            }
+            else {
+                alert('Thank You for Login');
+
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="page-1">
+
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="logof.png" alt="" height="70px" width="170px">
+            </div>
+            <div class="menu">
+
+                <a href="home.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="">Cost Calculator</a>
+
+                <div class="searchbar">
+
+                    <input type="search" name="" id="" placeholder="Search... ">
+                    <i class="fa-solid fa-magnifying-glass" id="icons"></i>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="log">
+            <div class="pic">
+
+                <img src="register.gif" alt="" height="350px" width="500px">
+            </div>
+
+
+            <div class="box">
+                <form method="post">
+                    <div class="logo">
+                        <img src="logof.png" alt="" height="70px" width="170px">
+                    </div>
+                    <br><br>
+                    <label for="">Enter your E-mail Id</label><br>
+                    <input type="email" value="" placeholder="" id="gmail"> <br>
+                    <label for="">Enter your Password</label><br>
+                    <input type="password" value="" placeholder="" id="pass"><br>
+                    <label for="">Enter your State</label><br>
+                    <input type="text" value="" placeholder="" id="stat"> <br>
+                    <label for="">Enter your Phone Number</label><br>
+                    <input type="tel" value="" placeholder="" id="phn"> <br>
+                    <div class="subm">
+                        <a href="#">
+                            <input type="submit" value="Register now" onclick="registration()"><br>
+                        </a>
+                    </div>
+                    <hr><br>
+
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <br>
+    </div>
+</body>
+
+</html>
